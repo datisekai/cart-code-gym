@@ -15,6 +15,9 @@ const Cart = () => {
     (cur, pre) => cur + pre.prices * pre.quantify,
     0
   );
+
+  const count = cartList.reduce((cur,pre) => cur + pre.quantify,0)
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -76,7 +79,7 @@ const Cart = () => {
         <div className="bg-gray-100 rounded-md p-5 mt-2">
           <div className="flex justify-between mt-2">
             <p className="text-lg">Count Products</p>
-            <p className="text-lg">{cartList.length} Products</p>
+            <p className="text-lg">{count} Products</p>
           </div>
           <div className="flex justify-between mt-2">
             <p className="text-lg">Total</p>
